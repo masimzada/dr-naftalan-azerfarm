@@ -34,7 +34,7 @@
         padding: 0 !important;
         height: 100% !important;
         width: 100% !important;
-        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        background: #1a1a1a;
         font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
           Roboto, sans-serif;
       }
@@ -70,219 +70,122 @@
       }
 
       .email-container {
-        max-width: 600px;
+        max-width: 700px;
         margin: 0 auto;
         background: #ffffff;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        border-radius: 16px;
+        border-radius: 20px;
         overflow: hidden;
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
       }
 
-      .hero-section {
+      .hero-card {
         background: linear-gradient(
           135deg,
           #d4af37 0%,
-          #f4d03f 50%,
-          #b8941f 100%
+          #f4d03f 20%,
+          #d4af37 100%
         );
-        padding: 60px 40px;
-        text-align: center;
+        border-radius: 24px;
+        margin: 30px;
+        padding: 50px 40px;
         position: relative;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4);
       }
 
-      .hero-section::before {
+      .hero-card::before {
         content: "";
         position: absolute;
         top: 0;
-        left: 0;
         right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" patternUnits="userSpaceOnUse" width="100" height="100"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1.5" fill="rgba(255,255,255,0.05)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>')
-          repeat;
-        opacity: 0.3;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        transform: translate(50%, -50%);
       }
 
-      .logo-container {
+      .hero-content {
         position: relative;
         z-index: 2;
-        margin-bottom: 30px;
       }
 
-      .logo {
-        width: 80px;
-        height: 80px;
-        border-radius: 20px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-        background: rgba(255, 255, 255, 0.95);
-        padding: 12px;
+      .logo-badge {
+        display: inline-block;
+        background: rgba(26, 26, 26, 0.9);
+        padding: 8px 20px;
+        border-radius: 50px;
+        margin-bottom: 25px;
+        backdrop-filter: blur(10px);
       }
 
       .hero-title {
         font-family: "Playfair Display", serif;
-        font-size: 36px;
-        font-weight: 600;
+        font-size: 42px;
+        font-weight: 700;
         color: #1a1a1a;
-        margin: 0 0 16px 0;
-        line-height: 1.2;
-        position: relative;
-        z-index: 2;
+        margin: 0 0 15px 0;
+        line-height: 1.1;
       }
 
       .hero-subtitle {
-        font-size: 16px;
-        color: rgba(26, 26, 26, 0.8);
-        margin: 0;
-        font-weight: 400;
-        position: relative;
-        z-index: 2;
-      }
-
-      .content-section {
-        padding: 50px 40px;
-        background: #ffffff;
-      }
-
-      .section-title {
-        font-family: "Playfair Display", serif;
-        font-size: 28px;
-        font-weight: 600;
-        color: #1a1a1a;
-        text-align: center;
-        margin: 0 0 40px 0;
-        line-height: 1.3;
-      }
-
-      .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
-        margin-bottom: 50px;
-      }
-
-      .feature-card {
-        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-        border: 1px solid rgba(212, 175, 55, 0.2);
-        border-radius: 16px;
-        padding: 30px 25px;
-        text-align: center;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .feature-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, #d4af37, #f4d03f);
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
-      }
-
-      .feature-card:hover::before {
-        transform: scaleX(1);
-      }
-
-      .feature-icon {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(135deg, #d4af37, #f4d03f);
-        border-radius: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 20px auto;
-        font-size: 24px;
-        color: #1a1a1a;
-        font-weight: 600;
-      }
-
-      .feature-title {
         font-size: 18px;
+        color: rgba(26, 26, 26, 0.8);
+        margin: 0 0 30px 0;
+        font-weight: 400;
+        line-height: 1.4;
+      }
+
+      .cta-primary {
+        display: inline-block;
+        background: #1a1a1a;
+        color: #d4af37;
+        padding: 16px 35px;
+        border-radius: 50px;
         font-weight: 600;
-        color: #1a1a1a;
-        margin: 0 0 12px 0;
-        line-height: 1.3;
-      }
-
-      .feature-text {
-        font-size: 14px;
-        color: #666666;
-        margin: 0;
-        line-height: 1.5;
-      }
-
-      .stats-section {
-        background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-        padding: 50px 40px;
-        color: #ffffff;
-      }
-
-      .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 30px;
-        margin-top: 40px;
-      }
-
-      .stat-card {
-        background: rgba(212, 175, 55, 0.1);
-        border: 1px solid rgba(212, 175, 55, 0.3);
-        border-radius: 16px;
-        padding: 30px 20px;
-        text-align: center;
-        backdrop-filter: blur(10px);
-      }
-
-      .stat-platform {
-        font-size: 14px;
-        color: #d4af37;
-        font-weight: 500;
-        margin-bottom: 8px;
-      }
-
-      .stat-number {
-        font-size: 32px;
-        font-weight: 700;
-        color: #ffffff;
-        margin: 0 0 8px 0;
-        line-height: 1;
-      }
-
-      .stat-label {
-        font-size: 14px;
-        color: rgba(255, 255, 255, 0.8);
-        margin: 0 0 15px 0;
-      }
-
-      .rating {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-      }
-
-      .stars {
-        color: #d4af37;
         font-size: 16px;
+        text-decoration: none;
+        box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
+        transition: all 0.3s ease;
+        border: 2px solid #1a1a1a;
       }
 
-      .rating-text {
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.7);
-      }
-
-      .cta-section {
-        background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
-        padding: 60px 40px;
+      .product-showcase {
         text-align: center;
+        margin-top: 40px;
         position: relative;
       }
 
-      .cta-title {
+      .product-image {
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+      }
+
+      .about-section {
+        background: #f8f9fa;
+        padding: 60px 40px;
+        margin: 0 30px;
+        border-radius: 24px;
+        position: relative;
+      }
+
+      .section-badge {
+        background: linear-gradient(135deg, #d4af37, #f4d03f);
+        color: #1a1a1a;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+
+      .about-title {
         font-family: "Playfair Display", serif;
         font-size: 32px;
         font-weight: 600;
@@ -291,57 +194,203 @@
         line-height: 1.2;
       }
 
-      .cta-text {
+      .about-text {
         font-size: 16px;
-        color: rgba(26, 26, 26, 0.8);
-        margin: 0 0 35px 0;
-        line-height: 1.5;
-      }
-
-      .cta-button {
-        display: inline-block;
-        background: #1a1a1a;
-        color: #d4af37;
-        padding: 18px 40px;
-        border-radius: 50px;
-        font-weight: 600;
-        font-size: 16px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(26, 26, 26, 0.3);
-        border: 2px solid #1a1a1a;
-      }
-
-      .cta-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 35px rgba(26, 26, 26, 0.4);
-      }
-
-      .contact-info {
-        margin-top: 25px;
-        font-size: 14px;
-        color: rgba(26, 26, 26, 0.7);
-      }
-
-      .footer {
-        background: #1a1a1a;
-        padding: 40px 40px 30px 40px;
-        text-align: center;
-        color: rgba(255, 255, 255, 0.7);
-      }
-
-      .footer-links {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
+        color: #666666;
+        line-height: 1.6;
         margin-bottom: 25px;
       }
 
+      .readmore-btn {
+        background: transparent;
+        border: 2px solid #d4af37;
+        color: #d4af37;
+        padding: 12px 25px;
+        border-radius: 25px;
+        font-weight: 500;
+        font-size: 14px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .articles-section {
+        padding: 60px 40px;
+        margin: 30px;
+      }
+
+      .articles-title {
+        font-family: "Playfair Display", serif;
+        font-size: 28px;
+        font-weight: 600;
+        color: #1a1a1a;
+        text-align: center;
+        margin: 0 0 40px 0;
+      }
+
+      .article-card {
+        background: #ffffff;
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        border-radius: 16px;
+        padding: 25px;
+        text-align: center;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .article-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+      }
+
+      .article-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #d4af37, #f4d03f);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px auto;
+        font-size: 32px;
+      }
+
+      .article-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin: 0 0 12px 0;
+      }
+
+      .article-link {
+        color: #d4af37;
+        font-weight: 500;
+        font-size: 14px;
+        text-decoration: none;
+      }
+
+      .discount-section {
+        background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+        padding: 50px 40px;
+        margin: 30px;
+        border-radius: 24px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .discount-section::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>')
+          repeat;
+        opacity: 0.3;
+        animation: float 20s infinite linear;
+      }
+
+      .discount-title {
+        font-family: "Playfair Display", serif;
+        font-size: 36px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin: 0 0 15px 0;
+        position: relative;
+        z-index: 2;
+      }
+
+      .discount-text {
+        font-size: 16px;
+        color: rgba(26, 26, 26, 0.8);
+        margin: 0 0 30px 0;
+        position: relative;
+        z-index: 2;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin: 50px 30px;
+      }
+
+      .stat-card {
+        background: #1a1a1a;
+        color: #ffffff;
+        padding: 40px 30px;
+        border-radius: 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        border: 2px solid #d4af37;
+      }
+
+      .stat-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #d4af37, #f4d03f);
+      }
+
+      .platform-logo {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto 20px auto;
+        border-radius: 12px;
+        background: rgba(212, 175, 55, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .stat-number {
+        font-size: 36px;
+        font-weight: 700;
+        color: #d4af37;
+        margin: 0 0 8px 0;
+      }
+
+      .stat-label {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.8);
+        margin: 0 0 15px 0;
+      }
+
+      .rating-stars {
+        color: #d4af37;
+        font-size: 18px;
+        margin: 10px 0;
+      }
+
+      .rating-text {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .footer-section {
+        background: #1a1a1a;
+        padding: 50px 30px 30px 30px;
+        border-radius: 20px 20px 0 0;
+        text-align: center;
+      }
+
+      .footer-links {
+        margin-bottom: 30px;
+      }
+
       .footer-link {
+        display: inline-block;
         background: rgba(212, 175, 55, 0.1);
         border: 1px solid rgba(212, 175, 55, 0.3);
-        padding: 12px 24px;
-        border-radius: 8px;
+        padding: 15px 30px;
+        margin: 0 10px 15px 10px;
+        border-radius: 12px;
         color: #d4af37;
         font-size: 14px;
         font-weight: 500;
@@ -351,46 +400,70 @@
 
       .footer-link:hover {
         background: rgba(212, 175, 55, 0.2);
+        transform: translateY(-2px);
       }
 
       .footer-text {
         font-size: 12px;
-        line-height: 1.5;
-        margin: 0;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.6;
+      }
+
+      .unsubscribe-link {
+        color: #d4af37;
+        text-decoration: underline;
       }
 
       @media only screen and (max-width: 600px) {
         .email-container {
-          margin: 0;
-          border-radius: 0;
+          margin: 10px;
+          border-radius: 16px;
         }
 
-        .hero-section,
-        .content-section,
-        .stats-section,
-        .cta-section,
-        .footer {
-          padding-left: 20px;
-          padding-right: 20px;
+        .hero-card,
+        .about-section,
+        .articles-section,
+        .discount-section {
+          margin: 15px;
+          padding: 30px 20px;
         }
 
         .hero-title {
+          font-size: 32px;
+        }
+
+        .discount-title {
           font-size: 28px;
         }
 
-        .cta-title {
-          font-size: 24px;
-        }
-
-        .features-grid,
         .stats-grid {
           grid-template-columns: 1fr;
+          margin: 30px 15px;
           gap: 20px;
         }
 
-        .footer-links {
-          flex-direction: column;
-          gap: 15px;
+        .footer-section {
+          padding: 30px 15px 20px 15px;
+        }
+
+        .footer-link {
+          display: block;
+          margin: 0 0 10px 0;
+        }
+      }
+
+      @keyframes float {
+        0% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        33% {
+          transform: translate(30px, -30px) rotate(120deg);
+        }
+        66% {
+          transform: translate(-20px, 20px) rotate(240deg);
+        }
+        100% {
+          transform: translate(0, 0) rotate(360deg);
         }
       }
     </style>
@@ -400,11 +473,11 @@
     style="
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      background: #1a1a1a;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     "
   >
-    <center style="width: 100%; padding: 20px 0">
+    <center style="width: 100%; padding: 30px 20px">
       <!-- Preheader -->
       <div
         style="
@@ -418,481 +491,162 @@
           mso-hide: all;
         "
       >
-        Dr. Naftalan ✨ Премиальная нафталанская косметика нового поколения.
-        Эксклюзивные предложения и лучшие цены только сегодня!
+        Dr. Naftalan ✨ Натуральная нафталанская косметика нового поколения.
+        Эксклюзивные предложения только сегодня!
       </div>
 
       <!-- Email Container -->
       <div
         class="email-container"
         style="
-          max-width: 600px;
+          max-width: 700px;
           margin: 0 auto;
           background: #ffffff;
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-          border-radius: 16px;
+          border-radius: 20px;
           overflow: hidden;
+          box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
         "
       >
-        <!-- Hero Section -->
+        <!-- Hero Card Section -->
         <div
-          class="hero-section"
+          class="hero-card"
           style="
             background: linear-gradient(
               135deg,
               #d4af37 0%,
-              #f4d03f 50%,
-              #b8941f 100%
+              #f4d03f 20%,
+              #d4af37 100%
             );
-            padding: 60px 40px;
-            text-align: center;
+            border-radius: 24px;
+            margin: 30px;
+            padding: 50px 40px;
             position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4);
           "
         >
+          <div class="hero-content" style="position: relative; z-index: 2">
+            <div
+              class="logo-badge"
+              style="
+                display: inline-block;
+                background: rgba(255, 255, 255);
+                padding: 8px 20px;
+                border-radius: 50px;
+                margin-bottom: 25px;
+              "
+            >
+              <img
+                src="https://www.drnaftalan.store/assets/img/favicon/favicon.svg"
+                alt="Dr. Naftalan"
+                style="
+                  width: 24px;
+                  height: 24px;
+                  vertical-align: middle;
+                  margin-right: 8px;
+                "
+              />
+              <span
+                style="
+                  color: #d4af37;
+                  font-weight: 600;
+                  font-size: 14px;
+                  vertical-align: middle;
+                "
+                >Dr. Naftalan</span
+              >
+            </div>
+
+            <h1
+              class="hero-title"
+              style="
+                font-family: 'Playfair Display', serif;
+                font-size: 42px;
+                font-weight: 700;
+                color: #1a1a1a;
+                margin: 0 0 15px 0;
+                line-height: 1.1;
+              "
+            >
+              Усильте вашу кожу<br />натуральными экстрактами
+            </h1>
+
+            <p
+              class="hero-subtitle"
+              style="
+                font-size: 18px;
+                color: rgba(26, 26, 26, 0.8);
+                margin: 0 0 30px 0;
+                font-weight: 400;
+                line-height: 1.4;
+              "
+            >
+              Натуральная нафталанская эссенция поможет вам ухаживать за кожей
+              лица и увлажнять тело.
+            </p>
+
+            <a
+              href="tel:+994707478888"
+              class="cta-primary"
+              style="
+                display: inline-block;
+                background: #1a1a1a;
+                color: #d4af37;
+                padding: 16px 35px;
+                border-radius: 50px;
+                font-weight: 600;
+                font-size: 16px;
+                text-decoration: none;
+                box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
+                border: 2px solid #1a1a1a;
+              "
+            >
+              ЗАКАЗАТЬ СЕЙЧАС
+            </a>
+          </div>
+
           <div
-            class="logo-container"
-            style="position: relative; z-index: 2; margin-bottom: 30px"
+            class="product-showcase"
+            style="text-align: center; margin-top: 40px; position: relative"
           >
             <img
-              src="https://www.drnaftalan.store/assets/img/logo/black.png"
-              alt="Dr. Naftalan"
-              class="logo"
-              style="
-                width: 80px;
-                height: 80px;
-                border-radius: 20px;
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-                background: rgba(255, 255, 255, 0.95);
-                padding: 12px;
-              "
+              src="https://www.drnaftalan.store/assets/img/material/cream.png"
+              alt="Dr. Naftalan Cream"
+              class="product-image"
+              style="max-width: 300px; width: 100%; height: auto"
             />
           </div>
-          <h1
-            class="hero-title"
-            style="
-              font-family: 'Playfair Display', serif;
-              font-size: 36px;
-              font-weight: 600;
-              color: #1a1a1a;
-              margin: 0 0 16px 0;
-              line-height: 1.2;
-              position: relative;
-              z-index: 2;
-            "
-          >
-            Dr. Naftalan
-          </h1>
-          <p
-            class="hero-subtitle"
-            style="
-              font-size: 16px;
-              color: rgba(26, 26, 26, 0.8);
-              margin: 0;
-              font-weight: 400;
-              position: relative;
-              z-index: 2;
-            "
-          >
-            Премиальная нафталанская косметика нового поколения
-          </p>
         </div>
 
-        <!-- Features Section -->
+        <!-- About Section -->
         <div
-          class="content-section"
-          style="padding: 50px 40px; background: #ffffff"
-        >
-          <h2
-            class="section-title"
-            style="
-              font-family: 'Playfair Display', serif;
-              font-size: 28px;
-              font-weight: 600;
-              color: #1a1a1a;
-              text-align: center;
-              margin: 0 0 40px 0;
-              line-height: 1.3;
-            "
-          >
-            Почему нас выбирают?
-          </h2>
-
-          <!-- Features Grid -->
-          <table
-            role="presentation"
-            cellspacing="0"
-            cellpadding="0"
-            border="0"
-            width="100%"
-          >
-            <tr>
-              <td valign="top" width="33.33%" style="padding: 15px">
-                <div
-                  class="feature-card"
-                  style="
-                    background: linear-gradient(
-                      135deg,
-                      #f8f9fa 0%,
-                      #ffffff 100%
-                    );
-                    border: 1px solid rgba(212, 175, 55, 0.2);
-                    border-radius: 16px;
-                    padding: 30px 25px;
-                    text-align: center;
-                  "
-                >
-                  <div
-                    class="feature-icon"
-                    style="
-                      width: 60px;
-                      height: 60px;
-                      background: linear-gradient(135deg, #d4af37, #f4d03f);
-                      border-radius: 16px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      margin: 0 auto 20px auto;
-                      font-size: 24px;
-                      color: #1a1a1a;
-                      font-weight: 600;
-                    "
-                  >
-                    🧪
-                  </div>
-                  <h3
-                    class="feature-title"
-                    style="
-                      font-size: 18px;
-                      font-weight: 600;
-                      color: #1a1a1a;
-                      margin: 0 0 12px 0;
-                      line-height: 1.3;
-                    "
-                  >
-                    Научно доказано
-                  </h3>
-                  <p
-                    class="feature-text"
-                    style="
-                      font-size: 14px;
-                      color: #666666;
-                      margin: 0;
-                      line-height: 1.5;
-                    "
-                  >
-                    1600+ исследований подтверждают эффективность нашей
-                    продукции
-                  </p>
-                </div>
-              </td>
-              <td valign="top" width="33.33%" style="padding: 15px">
-                <div
-                  class="feature-card"
-                  style="
-                    background: linear-gradient(
-                      135deg,
-                      #f8f9fa 0%,
-                      #ffffff 100%
-                    );
-                    border: 1px solid rgba(212, 175, 55, 0.2);
-                    border-radius: 16px;
-                    padding: 30px 25px;
-                    text-align: center;
-                  "
-                >
-                  <div
-                    class="feature-icon"
-                    style="
-                      width: 60px;
-                      height: 60px;
-                      background: linear-gradient(135deg, #d4af37, #f4d03f);
-                      border-radius: 16px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      margin: 0 auto 20px auto;
-                      font-size: 24px;
-                      color: #1a1a1a;
-                      font-weight: 600;
-                    "
-                  >
-                    💎
-                  </div>
-                  <h3
-                    class="feature-title"
-                    style="
-                      font-size: 18px;
-                      font-weight: 600;
-                      color: #1a1a1a;
-                      margin: 0 0 12px 0;
-                      line-height: 1.3;
-                    "
-                  >
-                    Премиум качество
-                  </h3>
-                  <p
-                    class="feature-text"
-                    style="
-                      font-size: 14px;
-                      color: #666666;
-                      margin: 0;
-                      line-height: 1.5;
-                    "
-                  >
-                    Эксклюзивная нафталанская нефть из единственного
-                    месторождения
-                  </p>
-                </div>
-              </td>
-              <td valign="top" width="33.33%" style="padding: 15px">
-                <div
-                  class="feature-card"
-                  style="
-                    background: linear-gradient(
-                      135deg,
-                      #f8f9fa 0%,
-                      #ffffff 100%
-                    );
-                    border: 1px solid rgba(212, 175, 55, 0.2);
-                    border-radius: 16px;
-                    padding: 30px 25px;
-                    text-align: center;
-                  "
-                >
-                  <div
-                    class="feature-icon"
-                    style="
-                      width: 60px;
-                      height: 60px;
-                      background: linear-gradient(135deg, #d4af37, #f4d03f);
-                      border-radius: 16px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      margin: 0 auto 20px auto;
-                      font-size: 24px;
-                      color: #1a1a1a;
-                      font-weight: 600;
-                    "
-                  >
-                    ⚡
-                  </div>
-                  <h3
-                    class="feature-title"
-                    style="
-                      font-size: 18px;
-                      font-weight: 600;
-                      color: #1a1a1a;
-                      margin: 0 0 12px 0;
-                      line-height: 1.3;
-                    "
-                  >
-                    Быстрый результат
-                  </h3>
-                  <p
-                    class="feature-text"
-                    style="
-                      font-size: 14px;
-                      color: #666666;
-                      margin: 0;
-                      line-height: 1.5;
-                    "
-                  >
-                    97% клиентов замечают улучшения уже через 7 дней применения
-                  </p>
-                </div>
-              </td>
-            </tr>
-          </table>
-        </div>
-
-        <!-- Stats Section -->
-        <div
-          class="stats-section"
+          class="about-section"
           style="
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-            padding: 50px 40px;
-            color: #ffffff;
-          "
-        >
-          <h2
-            class="section-title"
-            style="
-              font-family: 'Playfair Display', serif;
-              font-size: 28px;
-              font-weight: 600;
-              color: #d4af37;
-              text-align: center;
-              margin: 0 0 40px 0;
-              line-height: 1.3;
-            "
-          >
-            Наши достижения
-          </h2>
-
-          <!-- Stats Grid -->
-          <table
-            role="presentation"
-            cellspacing="0"
-            cellpadding="0"
-            border="0"
-            width="100%"
-          >
-            <tr>
-              <td valign="top" width="50%" style="padding: 15px">
-                <div
-                  class="stat-card"
-                  style="
-                    background: rgba(212, 175, 55, 0.1);
-                    border: 1px solid rgba(212, 175, 55, 0.3);
-                    border-radius: 16px;
-                    padding: 30px 20px;
-                    text-align: center;
-                  "
-                >
-                  <img
-                    src="https://www.drnaftalan.store/assets/img/logo/wildberries.png"
-                    alt="Wildberries"
-                    style="width: 40px; height: 40px; margin-bottom: 15px"
-                  />
-                  <div
-                    class="stat-platform"
-                    style="
-                      font-size: 14px;
-                      color: #d4af37;
-                      font-weight: 500;
-                      margin-bottom: 8px;
-                    "
-                  >
-                    Wildberries
-                  </div>
-                  <div
-                    class="stat-number"
-                    style="
-                      font-size: 32px;
-                      font-weight: 700;
-                      color: #ffffff;
-                      margin: 0 0 8px 0;
-                      line-height: 1;
-                    "
-                  >
-                    18.925
-                  </div>
-                  <div
-                    class="stat-label"
-                    style="
-                      font-size: 14px;
-                      color: rgba(255, 255, 255, 0.8);
-                      margin: 0 0 15px 0;
-                    "
-                  >
-                    продаж
-                  </div>
-                  <div
-                    class="rating"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      gap: 8px;
-                    "
-                  >
-                    <span class="stars" style="color: #d4af37; font-size: 16px"
-                      >★★★★★</span
-                    >
-                    <span
-                      class="rating-text"
-                      style="font-size: 13px; color: rgba(255, 255, 255, 0.7)"
-                      >4.6 (1.246 отзывов)</span
-                    >
-                  </div>
-                </div>
-              </td>
-              <td valign="top" width="50%" style="padding: 15px">
-                <div
-                  class="stat-card"
-                  style="
-                    background: rgba(212, 175, 55, 0.1);
-                    border: 1px solid rgba(212, 175, 55, 0.3);
-                    border-radius: 16px;
-                    padding: 30px 20px;
-                    text-align: center;
-                  "
-                >
-                  <img
-                    src="https://www.drnaftalan.store/assets/img/logo/ozon.png"
-                    alt="OZON"
-                    style="width: 40px; height: 40px; margin-bottom: 15px"
-                  />
-                  <div
-                    class="stat-platform"
-                    style="
-                      font-size: 14px;
-                      color: #d4af37;
-                      font-weight: 500;
-                      margin-bottom: 8px;
-                    "
-                  >
-                    OZON
-                  </div>
-                  <div
-                    class="stat-number"
-                    style="
-                      font-size: 32px;
-                      font-weight: 700;
-                      color: #ffffff;
-                      margin: 0 0 8px 0;
-                      line-height: 1;
-                    "
-                  >
-                    22.220
-                  </div>
-                  <div
-                    class="stat-label"
-                    style="
-                      font-size: 14px;
-                      color: rgba(255, 255, 255, 0.8);
-                      margin: 0 0 15px 0;
-                    "
-                  >
-                    продаж
-                  </div>
-                  <div
-                    class="rating"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      gap: 8px;
-                    "
-                  >
-                    <span class="stars" style="color: #d4af37; font-size: 16px"
-                      >★★★★★</span
-                    >
-                    <span
-                      class="rating-text"
-                      style="font-size: 13px; color: rgba(255, 255, 255, 0.7)"
-                      >4.62 (4.743 отзывов)</span
-                    >
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </table>
-        </div>
-
-        <!-- CTA Section -->
-        <div
-          class="cta-section"
-          style="
-            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            background: #f8f9fa;
             padding: 60px 40px;
-            text-align: center;
+            margin: 0 30px;
+            border-radius: 24px;
             position: relative;
           "
         >
+          <span
+            class="section-badge"
+            style="
+              background: linear-gradient(135deg, #d4af37, #f4d03f);
+              color: #1a1a1a;
+              padding: 8px 20px;
+              border-radius: 20px;
+              font-size: 14px;
+              font-weight: 600;
+              display: inline-block;
+              margin-bottom: 20px;
+            "
+          >
+            О нашем продукте
+          </span>
+
           <h2
-            class="cta-title"
+            class="about-title"
             style="
               font-family: 'Playfair Display', serif;
               font-size: 32px;
@@ -902,118 +656,582 @@
               line-height: 1.2;
             "
           >
-            Эксклюзивное предложение
+            О нашем продукте
           </h2>
+
           <p
-            class="cta-text"
+            class="about-text"
+            style="
+              font-size: 16px;
+              color: #666666;
+              line-height: 1.6;
+              margin-bottom: 25px;
+            "
+          >
+            Уникальная нафталанская нефть добывается исключительно в
+            Азербайджане и представляет собой натуральное решение для лечения
+            более 70 заболеваний кожи и суставов. Наш крем создан на основе
+            многовековых традиций и современных научных исследований.
+          </p>
+
+          <a
+            href="#"
+            class="readmore-btn"
+            style="
+              background: transparent;
+              border: 2px solid #d4af37;
+              color: #d4af37;
+              padding: 12px 25px;
+              border-radius: 25px;
+              font-weight: 500;
+              font-size: 14px;
+              text-decoration: none;
+            "
+          >
+            Подробнее
+          </a>
+        </div>
+
+        <!-- Articles Section -->
+        <div class="articles-section" style="padding: 60px 40px; margin: 30px">
+          <h2
+            class="articles-title"
+            style="
+              font-family: 'Playfair Display', serif;
+              font-size: 28px;
+              font-weight: 600;
+              color: #1a1a1a;
+              text-align: center;
+              margin: 0 0 40px 0;
+            "
+          >
+            Наши преимущества
+          </h2>
+
+          <table
+            role="presentation"
+            cellspacing="0"
+            cellpadding="0"
+            border="0"
+            width="100%"
+          >
+            <tr>
+              <td valign="top" width="33.33%" style="padding: 10px">
+                <div
+                  class="article-card"
+                  style="
+                    background: #ffffff;
+                    border: 1px solid rgba(212, 175, 55, 0.2);
+                    border-radius: 16px;
+                    padding: 25px;
+                    text-align: center;
+                    margin-bottom: 20px;
+                    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+                  "
+                >
+                  <div
+                    class="article-icon"
+                    style="
+                      width: 80px;
+                      height: 80px;
+                      background: linear-gradient(135deg, #d4af37, #f4d03f);
+                      border-radius: 20px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      margin: 0 auto 20px auto;
+                      font-size: 32px;
+                    "
+                  >
+                    🧪
+                  </div>
+                  <h3
+                    class="article-title"
+                    style="
+                      font-size: 18px;
+                      font-weight: 600;
+                      color: #1a1a1a;
+                      margin: 0 0 12px 0;
+                    "
+                  >
+                    Натуральная эссенция
+                  </h3>
+                  <a
+                    href="#"
+                    class="article-link"
+                    style="
+                      color: #d4af37;
+                      font-weight: 500;
+                      font-size: 14px;
+                      text-decoration: none;
+                    "
+                    >Узнать больше</a
+                  >
+                </div>
+              </td>
+              <td valign="top" width="33.33%" style="padding: 10px">
+                <div
+                  class="article-card"
+                  style="
+                    background: #ffffff;
+                    border: 1px solid rgba(212, 175, 55, 0.2);
+                    border-radius: 16px;
+                    padding: 25px;
+                    text-align: center;
+                    margin-bottom: 20px;
+                    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+                  "
+                >
+                  <div
+                    class="article-icon"
+                    style="
+                      width: 80px;
+                      height: 80px;
+                      background: linear-gradient(135deg, #d4af37, #f4d03f);
+                      border-radius: 20px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      margin: 0 auto 20px auto;
+                      font-size: 32px;
+                    "
+                  >
+                    🧴
+                  </div>
+                  <h3
+                    class="article-title"
+                    style="
+                      font-size: 18px;
+                      font-weight: 600;
+                      color: #1a1a1a;
+                      margin: 0 0 12px 0;
+                    "
+                  >
+                    Натуральное мыло
+                  </h3>
+                  <a
+                    href="#"
+                    class="article-link"
+                    style="
+                      color: #d4af37;
+                      font-weight: 500;
+                      font-size: 14px;
+                      text-decoration: none;
+                    "
+                    >Узнать больше</a
+                  >
+                </div>
+              </td>
+              <td valign="top" width="33.33%" style="padding: 10px">
+                <div
+                  class="article-card"
+                  style="
+                    background: #ffffff;
+                    border: 1px solid rgba(212, 175, 55, 0.2);
+                    border-radius: 16px;
+                    padding: 25px;
+                    text-align: center;
+                    margin-bottom: 20px;
+                    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+                  "
+                >
+                  <div
+                    class="article-icon"
+                    style="
+                      width: 80px;
+                      height: 80px;
+                      background: linear-gradient(135deg, #d4af37, #f4d03f);
+                      border-radius: 20px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      margin: 0 auto 20px auto;
+                      font-size: 32px;
+                    "
+                  >
+                    💧
+                  </div>
+                  <h3
+                    class="article-title"
+                    style="
+                      font-size: 18px;
+                      font-weight: 600;
+                      color: #1a1a1a;
+                      margin: 0 0 12px 0;
+                    "
+                  >
+                    Премиум эссенция
+                  </h3>
+                  <a
+                    href="#"
+                    class="article-link"
+                    style="
+                      color: #d4af37;
+                      font-weight: 500;
+                      font-size: 14px;
+                      text-decoration: none;
+                    "
+                    >Узнать больше</a
+                  >
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Discount Section -->
+        <div
+          class="discount-section"
+          style="
+            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            padding: 50px 40px;
+            margin: 30px;
+            border-radius: 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+          "
+        >
+          <h2
+            class="discount-title"
+            style="
+              font-family: 'Playfair Display', serif;
+              font-size: 36px;
+              font-weight: 700;
+              color: #1a1a1a;
+              margin: 0 0 15px 0;
+              position: relative;
+              z-index: 2;
+            "
+          >
+            Создайте аккаунт<br />и получите скидку 20%
+          </h2>
+
+          <p
+            class="discount-text"
             style="
               font-size: 16px;
               color: rgba(26, 26, 26, 0.8);
-              margin: 0 0 35px 0;
-              line-height: 1.5;
+              margin: 0 0 30px 0;
+              position: relative;
+              z-index: 2;
             "
           >
-            Для партнёров предлагаем <strong>специальные условия</strong> и
-            <strong>индивидуальные скидки</strong>.<br />
-            Персональное предложение в течение 24 часов!
+            Натуральная эссенция поможет вам ухаживать за кожей лица и увлажнять
+            тело.
           </p>
+
           <a
             href="tel:+994707478888"
-            class="cta-button"
+            class="cta-primary"
             style="
               display: inline-block;
               background: #1a1a1a;
               color: #d4af37;
-              padding: 18px 40px;
+              padding: 16px 35px;
               border-radius: 50px;
               font-weight: 600;
               font-size: 16px;
               text-decoration: none;
-              box-shadow: 0 8px 25px rgba(26, 26, 26, 0.3);
+              box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
               border: 2px solid #1a1a1a;
+              position: relative;
+              z-index: 2;
             "
           >
-            📞 Связаться с нами
+            ЗАКАЗАТЬ СЕЙЧАС
           </a>
+        </div>
+
+        <!-- Stats Section -->
+        <div
+          class="stats-grid"
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 50px 30px;
+          "
+        >
           <div
-            class="contact-info"
+            class="stat-card"
             style="
-              margin-top: 25px;
-              font-size: 14px;
-              color: rgba(26, 26, 26, 0.7);
+              background: #1a1a1a;
+              color: #ffffff;
+              padding: 40px 30px;
+              border-radius: 20px;
+              text-align: center;
+              position: relative;
+              overflow: hidden;
+              border: 2px solid #d4af37;
             "
           >
-            <strong>+994-70-747-88-88</strong> • info@drnaftalan.store
+            <div
+              class="platform-logo"
+              style="
+                width: 50px;
+                height: 50px;
+                margin: 0 auto 20px auto;
+                border-radius: 12px;
+                background: rgba(212, 175, 55, 0.1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <img
+                src="https://www.drnaftalan.store/assets/img/logo/wildberries.png"
+                alt="Wildberries"
+                style="width: 30px; height: 30px"
+              />
+            </div>
+            <div
+              class="stat-number"
+              style="
+                font-size: 36px;
+                font-weight: 700;
+                color: #d4af37;
+                margin: 0 0 8px 0;
+              "
+            >
+              18.925
+            </div>
+            <div
+              class="stat-label"
+              style="
+                font-size: 14px;
+                color: rgba(255, 255, 255, 0.8);
+                margin: 0 0 15px 0;
+              "
+            >
+              продаж
+            </div>
+            <div
+              class="rating-stars"
+              style="color: #d4af37; font-size: 18px; margin: 10px 0"
+            >
+              ★★★★★
+            </div>
+            <div
+              class="rating-text"
+              style="font-size: 13px; color: rgba(255, 255, 255, 0.7)"
+            >
+              4.6 (1.246 отзывов)
+            </div>
           </div>
+
+          <div
+            class="stat-card"
+            style="
+              background: #1a1a1a;
+              color: #ffffff;
+              padding: 40px 30px;
+              border-radius: 20px;
+              text-align: center;
+              position: relative;
+              overflow: hidden;
+              border: 2px solid #d4af37;
+            "
+          >
+            <div
+              class="platform-logo"
+              style="
+                width: 50px;
+                height: 50px;
+                margin: 0 auto 20px auto;
+                border-radius: 12px;
+                background: rgba(212, 175, 55, 0.1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <img
+                src="https://www.drnaftalan.store/assets/img/logo/ozon.png"
+                alt="OZON"
+                style="width: 30px; height: 30px"
+              />
+            </div>
+            <div
+              class="stat-number"
+              style="
+                font-size: 36px;
+                font-weight: 700;
+                color: #d4af37;
+                margin: 0 0 8px 0;
+              "
+            >
+              22.220
+            </div>
+            <div
+              class="stat-label"
+              style="
+                font-size: 14px;
+                color: rgba(255, 255, 255, 0.8);
+                margin: 0 0 15px 0;
+              "
+            >
+              продаж
+            </div>
+            <div
+              class="rating-stars"
+              style="color: #d4af37; font-size: 18px; margin: 10px 0"
+            >
+              ★★★★★
+            </div>
+            <div
+              class="rating-text"
+              style="font-size: 13px; color: rgba(255, 255, 255, 0.7)"
+            >
+              4.62 (4.743 отзывов)
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional CTA Section -->
+        <div
+          style="
+            text-align: center;
+            padding: 50px 40px;
+            margin: 0 30px;
+            background: linear-gradient(
+              135deg,
+              rgba(212, 175, 55, 0.05) 0%,
+              rgba(244, 208, 63, 0.05) 100%
+            );
+            border-radius: 20px;
+          "
+        >
+          <h3
+            style="
+              font-family: 'Playfair Display', serif;
+              font-size: 24px;
+              font-weight: 600;
+              color: #1a1a1a;
+              margin: 0 0 20px 0;
+            "
+          >
+            Посмотрите и управляйте избранными товарами
+          </h3>
+          <a
+            href="https://www.drnaftalan.store"
+            style="
+              display: inline-block;
+              background: transparent;
+              border: 2px solid #d4af37;
+              color: #d4af37;
+              padding: 12px 30px;
+              border-radius: 25px;
+              font-weight: 500;
+              font-size: 14px;
+              text-decoration: none;
+            "
+          >
+            УЗНАТЬ БОЛЬШЕ
+          </a>
         </div>
 
         <!-- Footer -->
         <div
-          class="footer"
+          class="footer-section"
           style="
             background: #1a1a1a;
-            padding: 40px 40px 30px 40px;
+            padding: 50px 30px 30px 30px;
+            border-radius: 20px 20px 0 0;
             text-align: center;
-            color: rgba(255, 255, 255, 0.7);
           "
         >
-          <div class="footer-links" style="margin-bottom: 25px">
-            <table
-              role="presentation"
-              cellspacing="0"
-              cellpadding="0"
-              border="0"
-              style="margin: 0 auto"
+          <div class="footer-links" style="margin-bottom: 30px">
+            <a
+              href="https://www.wildberries.ru/brands/310778233-naftaone"
+              class="footer-link"
+              style="
+                display: inline-block;
+                background: rgba(212, 175, 55, 0.1);
+                border: 1px solid rgba(212, 175, 55, 0.3);
+                padding: 15px 30px;
+                margin: 0 10px 15px 10px;
+                border-radius: 12px;
+                color: #d4af37;
+                font-size: 14px;
+                font-weight: 500;
+                text-decoration: none;
+              "
             >
-              <tr>
-                <td style="padding: 0 15px">
-                  <a
-                    href="https://www.wildberries.ru/brands/310778233-naftaone"
-                    class="footer-link"
-                    style="
-                      background: rgba(212, 175, 55, 0.1);
-                      border: 1px solid rgba(212, 175, 55, 0.3);
-                      padding: 12px 24px;
-                      border-radius: 8px;
-                      color: #d4af37;
-                      font-size: 14px;
-                      font-weight: 500;
-                      text-decoration: none;
-                    "
-                  >
-                    🛒 Wildberries
-                  </a>
-                </td>
-                <td style="padding: 0 15px">
-                  <a
-                    href="https://www.ozon.ru/seller/naftaone-197915"
-                    class="footer-link"
-                    style="
-                      background: rgba(212, 175, 55, 0.1);
-                      border: 1px solid rgba(212, 175, 55, 0.3);
-                      padding: 12px 24px;
-                      border-radius: 8px;
-                      color: #d4af37;
-                      font-size: 14px;
-                      font-weight: 500;
-                      text-decoration: none;
-                    "
-                  >
-                    🛍️ OZON
-                  </a>
-                </td>
-              </tr>
-            </table>
+              📱 Wildberries
+            </a>
+            <a
+              href="https://www.ozon.ru/seller/naftaone-197915"
+              class="footer-link"
+              style="
+                display: inline-block;
+                background: rgba(212, 175, 55, 0.1);
+                border: 1px solid rgba(212, 175, 55, 0.3);
+                padding: 15px 30px;
+                margin: 0 10px 15px 10px;
+                border-radius: 12px;
+                color: #d4af37;
+                font-size: 14px;
+                font-weight: 500;
+                text-decoration: none;
+              "
+            >
+              🛍️ OZON
+            </a>
+            <a
+              href="mailto:info@drnaftalan.store"
+              class="footer-link"
+              style="
+                display: inline-block;
+                background: rgba(212, 175, 55, 0.1);
+                border: 1px solid rgba(212, 175, 55, 0.3);
+                padding: 15px 30px;
+                margin: 0 10px 15px 10px;
+                border-radius: 12px;
+                color: #d4af37;
+                font-size: 14px;
+                font-weight: 500;
+                text-decoration: none;
+              "
+            >
+              ✉️ Написать нам
+            </a>
+            <a
+              href="tel:+994707478888"
+              class="footer-link"
+              style="
+                display: inline-block;
+                background: rgba(212, 175, 55, 0.1);
+                border: 1px solid rgba(212, 175, 55, 0.3);
+                padding: 15px 30px;
+                margin: 0 10px 15px 10px;
+                border-radius: 12px;
+                color: #d4af37;
+                font-size: 14px;
+                font-weight: 500;
+                text-decoration: none;
+              "
+            >
+              📞 Позвонить
+            </a>
           </div>
+
           <p
             class="footer-text"
-            style="font-size: 12px; line-height: 1.5; margin: 0"
+            style="
+              font-size: 12px;
+              color: rgba(255, 255, 255, 0.6);
+              line-height: 1.6;
+            "
           >
             Dr. Naftalan - Инновации в мире натуральной косметики<br />
-            <a href="#" style="color: #d4af37; text-decoration: underline"
+            <a
+              href="#"
+              class="unsubscribe-link"
+              style="color: #d4af37; text-decoration: underline"
               >Отписаться от рассылки</a
-            >
-            • © 2025 Dr. Naftalan. Все права защищены.
+            ><br />
+            © 2025 Dr. Naftalan. Все права защищены.
           </p>
         </div>
       </div>

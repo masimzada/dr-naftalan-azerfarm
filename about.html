@@ -151,6 +151,33 @@
         color: white;
         line-height: 1.6;
       }
+
+      /* Hamburger menu - hidden by default on desktop */
+      .hamburger {
+        display: none;
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .nav-link {
+        width: 100%;
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--primary-gold);
+        background-color: rgba(212, 175, 55, 0.1);
+      }
     </style>
 
     <link rel="stylesheet" href="./assets/css/style.css" />
@@ -668,6 +695,88 @@
         .cta-section h2 {
           font-size: 2rem;
         }
+
+        /* Mobile Navigation Styles */
+        .nav-menu {
+          position: fixed;
+          left: -100%;
+          top: 70px;
+          flex-direction: column;
+          background-color: rgba(26, 26, 26, 0.98);
+          backdrop-filter: blur(10px);
+          width: 100%;
+          text-align: center;
+          transition: 0.3s;
+          box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+          border-top: 1px solid rgba(212, 175, 55, 0.2);
+          padding: 2rem 0;
+          z-index: 999;
+        }
+
+        .nav-menu.active {
+          left: 0;
+        }
+
+        .nav-link {
+          display: block;
+          padding: 1rem;
+          margin: 0.5rem 0;
+          border-radius: 10px;
+          transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+          background-color: rgba(212, 175, 55, 0.1);
+          transform: translateX(10px);
+        }
+
+        .hamburger {
+          display: block;
+          cursor: pointer;
+          width: 30px;
+          height: 24px;
+          position: relative;
+          z-index: 1001;
+        }
+
+        .hamburger span {
+          display: block;
+          position: absolute;
+          height: 3px;
+          width: 100%;
+          background: var(--primary-gold);
+          border-radius: 3px;
+          opacity: 1;
+          left: 0;
+          transform: rotate(0deg);
+          transition: 0.25s ease-in-out;
+        }
+
+        .hamburger span:nth-child(1) {
+          top: 0px;
+        }
+
+        .hamburger span:nth-child(2) {
+          top: 8px;
+        }
+
+        .hamburger span:nth-child(3) {
+          top: 16px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+          top: 8px;
+          transform: rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+          top: 8px;
+          transform: rotate(-45deg);
+        }
       }
 
       @keyframes float {
@@ -1170,7 +1279,7 @@
       </div>
     </div>
 
-    <script src="./assets/js/script.js" defer></script>
+    <script src="./assets/js/script.js"></script>
 
     <!-- Performance optimizations and lazy loading -->
     <script>
@@ -1210,6 +1319,39 @@
 
       // Initialize when DOM is ready
       document.addEventListener("DOMContentLoaded", () => {
+        // Mobile menu toggle
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        if (hamburger && navMenu) {
+          hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+
+            // Update aria-expanded for accessibility
+            const isExpanded = navMenu.classList.contains("active");
+            hamburger.setAttribute("aria-expanded", isExpanded);
+          });
+
+          // Close mobile menu when clicking on a link
+          document.querySelectorAll(".nav-link").forEach((link) => {
+            link.addEventListener("click", () => {
+              hamburger.classList.remove("active");
+              navMenu.classList.remove("active");
+              hamburger.setAttribute("aria-expanded", false);
+            });
+          });
+
+          // Close menu when clicking outside
+          document.addEventListener("click", (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+              hamburger.classList.remove("active");
+              navMenu.classList.remove("active");
+              hamburger.setAttribute("aria-expanded", false);
+            }
+          });
+        }
+
         // Observe all fade-in elements
         document.querySelectorAll(".fade-in").forEach((el) => {
           observer.observe(el);

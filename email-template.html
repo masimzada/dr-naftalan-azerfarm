@@ -25,6 +25,13 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!--<![endif]-->
 
     <style>
@@ -75,7 +82,7 @@
         background: #ffffff;
         border-radius: 20px;
         overflow: hidden;
-        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+        /* box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3); */
       }
 
       .hero-card {
@@ -90,7 +97,7 @@
         padding: 50px 40px;
         position: relative;
         overflow: hidden;
-        box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4);
+        /* box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4); */
       }
 
       .hero-card::before {
@@ -149,7 +156,7 @@
         font-weight: 600;
         font-size: 16px;
         text-decoration: none;
-        box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
+        /* box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3); */
         transition: all 0.3s ease;
         border: 2px solid #1a1a1a;
       }
@@ -227,20 +234,32 @@
         margin: 0 0 40px 0;
       }
 
+      .articles-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      .article-wrapper {
+        width: 100%;
+      }
+
       .article-card {
         background: #ffffff;
         border: 1px solid rgba(212, 175, 55, 0.2);
         border-radius: 16px;
         padding: 25px;
         text-align: center;
-        margin-bottom: 20px;
+        height: 100%;
         transition: all 0.3s ease;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        /* box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); */
       }
 
       .article-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+        /* box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2); */
       }
 
       .article-icon {
@@ -414,6 +433,21 @@
         text-decoration: underline;
       }
 
+      @media only screen and (max-width: 768px) and (min-width: 601px) {
+        .articles-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 15px;
+        }
+
+        .article-wrapper {
+          max-width: none !important;
+        }
+
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
       @media only screen and (max-width: 600px) {
         .email-container {
           margin: 10px;
@@ -436,6 +470,27 @@
           font-size: 28px;
         }
 
+        .articles-grid {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+
+        .article-wrapper {
+          max-width: none !important;
+          margin: 0 0 15px 0 !important;
+          display: block !important;
+        }
+
+        .article-card {
+          padding: 20px;
+        }
+
+        .article-icon {
+          width: 70px !important;
+          height: 70px !important;
+          font-size: 28px !important;
+        }
+
         .stats-grid {
           grid-template-columns: 1fr;
           margin: 30px 15px;
@@ -449,6 +504,30 @@
         .footer-link {
           display: block;
           margin: 0 0 10px 0;
+        }
+      }
+
+      @media only screen and (max-width: 480px) {
+        .articles-section {
+          padding: 40px 20px;
+        }
+
+        .articles-grid {
+          gap: 10px;
+        }
+
+        .article-card {
+          padding: 15px;
+        }
+
+        .article-title {
+          font-size: 16px !important;
+        }
+
+        .article-icon {
+          width: 60px !important;
+          height: 60px !important;
+          font-size: 24px !important;
         }
       }
 
@@ -504,7 +583,7 @@
           background: #ffffff;
           border-radius: 20px;
           overflow: hidden;
-          box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+          /* box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3); */
         "
       >
         <!-- Hero Card Section -->
@@ -522,7 +601,7 @@
             padding: 50px 40px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4);
+            /* box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4); */
           "
         >
           <div class="hero-content" style="position: relative; z-index: 2">
@@ -554,7 +633,7 @@
                 line-height: 1.1;
               "
             >
-              Усильте вашу кожу<br />натуральными экстрактами
+              Сила натуральных экстрактов для вашей кожи
             </h1>
 
             <p
@@ -567,8 +646,8 @@
                 line-height: 1.4;
               "
             >
-              Натуральная нафталанская эссенция поможет вам ухаживать за кожей
-              лица и увлажнять тело.
+              Мы создали уходовое средство, вдохновлённое природой с важной
+              миссией и ценностью.
             </p>
 
             <a
@@ -583,7 +662,7 @@
                 font-weight: 600;
                 font-size: 16px;
                 text-decoration: none;
-                box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
+                /* box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3); */
                 border: 2px solid #1a1a1a;
               "
             >
@@ -604,7 +683,7 @@
                 width: 100%;
                 height: auto;
                 border-radius: 26px 0px 26px 0px;
-                box-shadow: 0 0px 40px rgba(255, 255, 255, 0.4);
+                /* box-shadow: 0 0px 40px rgba(255, 255, 255, 0.4); */
 
                 border-radius: 50px 0px 50px 50px;
               "
@@ -623,22 +702,6 @@
             position: relative;
           "
         >
-          <span
-            class="section-badge"
-            style="
-              background: linear-gradient(135deg, #d48d37, #facd81);
-              color: #1a1a1a;
-              padding: 8px 20px;
-              border-radius: 20px;
-              font-size: 14px;
-              font-weight: 600;
-              display: inline-block;
-              margin-bottom: 20px;
-            "
-          >
-            О нашем продукте
-          </span>
-
           <h2
             class="about-title"
             style="
@@ -665,11 +728,17 @@
             Уникальная нафталанская нефть добывается исключительно в
             Азербайджане и представляет собой натуральное решение для лечения
             более 70 заболеваний кожи и суставов. Наш крем создан на основе
-            многовековых традиций и современных научных исследований.
+            многовековых традиций и современных научных исследований. Наши
+            средства отлично дополняют основной уход при таких состояниях, как
+            псориаз, экзема, нейродермит, акне, фурункулах, язвах. <br />
+            <br />
+            <b>Состав:</b> 70 % - нефть нафталанская рафинированная, <br />
+            12 % - парафин, 6% - эмульгатор, 12 % - аэросил.
           </p>
 
+          <br />
           <a
-            href="#"
+            href="https://www.drnaftalan.store/"
             class="readmore-btn"
             style="
               background: transparent;
@@ -682,234 +751,11 @@
               text-decoration: none;
             "
           >
-            Подробнее
+            Хочу пробник!
           </a>
         </div>
 
         <!-- Articles Section -->
-        <div class="articles-section" style="padding: 60px 40px; margin: 30px">
-          <h2
-            class="articles-title"
-            style="
-              font-family: 'Playfair Display', serif;
-              font-size: 28px;
-              font-weight: 600;
-              color: #1a1a1a;
-              text-align: center;
-              margin: 0 0 40px 0;
-            "
-          >
-            Наши преимущества
-          </h2>
-
-          <!--[if mso]>
-          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-            <tr>
-              <td valign="top" width="33.33%" style="padding: 10px">
-          <![endif]-->
-
-          <div
-            style="
-              display: inline-block;
-              width: 100%;
-              max-width: 200px;
-              vertical-align: top;
-              margin: 0 10px 20px 10px;
-            "
-          >
-            <div
-              class="article-card"
-              style="
-                background: #ffffff;
-                border: 1px solid rgba(212, 175, 55, 0.2);
-                border-radius: 16px;
-                padding: 25px;
-                text-align: center;
-                margin-bottom: 20px;
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-              "
-            >
-              <div
-                class="article-icon"
-                style="
-                  width: 80px;
-                  height: 80px;
-                  background: linear-gradient(135deg, #d48d37, #facd81);
-                  border-radius: 20px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  margin: 0 auto 20px auto;
-                  font-size: 32px;
-                "
-              >
-                🧪
-              </div>
-              <h3
-                class="article-title"
-                style="
-                  font-size: 18px;
-                  font-weight: 600;
-                  color: #1a1a1a;
-                  margin: 0 0 12px 0;
-                "
-              >
-                Натуральная эссенция
-              </h3>
-              <a
-                href="#"
-                class="article-link"
-                style="
-                  color: #d48d37;
-                  font-weight: 500;
-                  font-size: 14px;
-                  text-decoration: none;
-                "
-                >Узнать больше</a
-              >
-            </div>
-          </div>
-
-          <!--[if mso]>
-              </td>
-              <td valign="top" width="33.33%" style="padding: 10px">
-          <![endif]-->
-
-          <div
-            style="
-              display: inline-block;
-              width: 100%;
-              max-width: 200px;
-              vertical-align: top;
-              margin: 0 10px 20px 10px;
-            "
-          >
-            <div
-              class="article-card"
-              style="
-                background: #ffffff;
-                border: 1px solid rgba(212, 175, 55, 0.2);
-                border-radius: 16px;
-                padding: 25px;
-                text-align: center;
-                margin-bottom: 20px;
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-              "
-            >
-              <div
-                class="article-icon"
-                style="
-                  width: 80px;
-                  height: 80px;
-                  background: linear-gradient(135deg, #d48d37, #facd81);
-                  border-radius: 20px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  margin: 0 auto 20px auto;
-                  font-size: 32px;
-                "
-              >
-                🧴
-              </div>
-              <h3
-                class="article-title"
-                style="
-                  font-size: 18px;
-                  font-weight: 600;
-                  color: #1a1a1a;
-                  margin: 0 0 12px 0;
-                "
-              >
-                Натуральное мыло
-              </h3>
-              <a
-                href="#"
-                class="article-link"
-                style="
-                  color: #d48d37;
-                  font-weight: 500;
-                  font-size: 14px;
-                  text-decoration: none;
-                "
-                >Узнать больше</a
-              >
-            </div>
-          </div>
-
-          <!--[if mso]>
-              </td>
-              <td valign="top" width="33.33%" style="padding: 10px">
-          <![endif]-->
-
-          <div
-            style="
-              display: inline-block;
-              width: 100%;
-              max-width: 200px;
-              vertical-align: top;
-              margin: 0 10px 20px 10px;
-            "
-          >
-            <div
-              class="article-card"
-              style="
-                background: #ffffff;
-                border: 1px solid rgba(212, 175, 55, 0.2);
-                border-radius: 16px;
-                padding: 25px;
-                text-align: center;
-                margin-bottom: 20px;
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-              "
-            >
-              <div
-                class="article-icon"
-                style="
-                  width: 80px;
-                  height: 80px;
-                  background: linear-gradient(135deg, #d48d37, #facd81);
-                  border-radius: 20px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  margin: 0 auto 20px auto;
-                  font-size: 32px;
-                "
-              >
-                💧
-              </div>
-              <h3
-                class="article-title"
-                style="
-                  font-size: 18px;
-                  font-weight: 600;
-                  color: #1a1a1a;
-                  margin: 0 0 12px 0;
-                "
-              >
-                Премиум эссенция
-              </h3>
-              <a
-                href="#"
-                class="article-link"
-                style="
-                  color: #d48d37;
-                  font-weight: 500;
-                  font-size: 14px;
-                  text-decoration: none;
-                "
-                >Узнать больше</a
-              >
-            </div>
-          </div>
-
-          <!--[if mso]>
-              </td>
-            </tr>
-          </table>
-          <![endif]-->
-        </div>
 
         <!-- Discount Section -->
         <div
@@ -948,10 +794,7 @@
               position: relative;
               z-index: 2;
             "
-          >
-            Натуральная эссенция поможет вам ухаживать за кожей лица и увлажнять
-            тело.
-          </p>
+          ></p>
 
           <a
             href="tel:+994707478888"
@@ -965,7 +808,7 @@
               font-weight: 600;
               font-size: 16px;
               text-decoration: none;
-              box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3);
+              /* box-shadow: 0 10px 30px rgba(26, 26, 26, 0.3); */
               border: 2px solid #1a1a1a;
               position: relative;
               z-index: 2;

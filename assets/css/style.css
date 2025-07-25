@@ -545,7 +545,7 @@ body {
 
 .about-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(2, minmax(350px, 1fr));
   gap: 3rem;
 }
 
@@ -592,18 +592,6 @@ body {
   font-size: 2rem;
   color: white;
   box-shadow: var(--shadow-gold);
-}
-
-.benefit-icon {
-  background: linear-gradient(145deg, #ff6b6b, #ee5a5a);
-}
-
-.result-icon {
-  background: linear-gradient(145deg, #4ecdc4, #45b7b8);
-}
-
-.innovation-icon {
-  background: linear-gradient(145deg, #45b7d1, #3a9bc1);
 }
 
 .about-card h3 {
@@ -994,7 +982,8 @@ body {
   box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
 }
 
-.benefit-icon {
+.benefit-icon,
+.card-icon {
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -1316,7 +1305,9 @@ button,
   .nav-menu {
     display: none;
   }
-
+  .product-image-section {
+    display: none;
+  }
   .hamburger {
     display: flex;
   }
@@ -1441,8 +1432,8 @@ button,
   }
 
   .product-tube {
-    width: 200px;
-    height: 300px;
+    width: 300px;
+    height: 400px;
   }
 
   .product-tube-large {
@@ -1486,6 +1477,9 @@ button,
     padding: 0 10px;
   }
 
+  .product-image-section {
+    display: none;
+  }
   /* Navigation */
   .navbar {
     padding: 0.75rem 0;
@@ -1564,8 +1558,8 @@ button,
   }
 
   .product-tube {
-    width: 150px;
-    height: 230px;
+    width: 250px;
+    height: 330px;
   }
 
   /* Sections */
